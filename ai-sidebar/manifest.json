@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "AI Chat Extension",
+  "version": "1.0",
+  "description": "A Chrome extension for AI-powered chat with pluggable API keys, page summarization, and suggestions.",
+  "permissions": ["activeTab", "storage", "http://*/*", "https://*/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
